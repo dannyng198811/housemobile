@@ -1,0 +1,30 @@
+<ion-view title="會員中心">
+     <ion-nav-bar class="bar-assertive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+    <ion-content overflow-scroll="false" padding="true" class="has-header">
+    <div class="list">
+
+    <div class="item item-avatar" href="#">
+      <img src="img/spengler.jpg">
+      <h2>{{user.nikeName}}</h2>
+      <p>{{user.email}}</p>
+    </div>
+<div class="item item-icon-left">
+    <i class="icon ion-email"></i>
+    會員積分
+  </div>
+        <div class="item item-icon-left">
+             <i class="icon ion-mic-a"></i>
+    優惠券
+             <span class="badge badge-assertive">1</span>
+  </div>
+    
+ <a href="#/page1/"class="button button-block button-assertive" >
+        
+  登出系統
+</a>
+</div>
+    
+    </ion-content>
+</ion-view>

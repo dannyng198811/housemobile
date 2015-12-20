@@ -1,0 +1,57 @@
+<ion-view title=" 柯打預覽">
+     <ion-nav-bar class="bar-assertive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+     <ion-content  padding="true">
+        <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+    <div class="card">
+         <div class="item item-divider">
+    柯打：
+  </div>
+  <div class="item item-text-wrap">
+     
+      
+         <p>地方：{{order.choice}}</p>
+
+   <p> 尺寸：{{order.size}}</p>
+     <p>房間：{{order.rooms}}</p>
+       <p>洗手間：{{order.bathrooms}}</p>
+      
+  </div>
+     
+        
+        
+  <div class="item item-divider">
+    總收費：
+  </div>
+  <div class="item item-text-wrap">
+   HK {{order.price|currency}}
+  </div>
+ 
+</div>
+        
+        
+        
+    
+     <div class="list">
+         <div class="item item-divider">
+       請選擇你預約的時間：
+  </div>
+          <label class="item item-input">
+  <span class="input-label">Date</span>
+  <input type="date" ng-model="order.date">
+</label>
+        </div>
+    
+     <a ng-click="makeOrder()" class="button button-full button-outline button-assertive">
+ 確認柯打
+</a>      
+    
+    
+   
+    </ion-content>
+</ion-view>

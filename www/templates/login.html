@@ -1,0 +1,25 @@
+<ion-view title="用家登錄">
+     <ion-nav-bar class="bar-assertive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+    <ion-content overflow-scroll="false" padding="true" class="has-header">
+         <img src="img/housekeeping.png" style="width:300px;">
+    <div class="list">
+  <label class="item item-input">
+    <span class="input-label">電郵</span>
+    <input type="text" ng-model="user.email">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">密碼</span>
+    <input type="password" ng-model="user.password">
+  </label>
+</div>
+        
+        <button ng-click="login(user)" class="button button-block button-assertive">
+  登入
+</button>
+       <a  href="#/page1/register" class="button button-block button-outline button-assertive">
+ 立即註冊
+</a>
+    </ion-content>
+</ion-view>

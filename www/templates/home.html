@@ -1,0 +1,65 @@
+<ion-view title="鐘點易">
+     <ion-nav-bar class="bar-assertive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+     
+    <ion-content  padding="true">
+        <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+        <img src="img/housekeeping.png" style="width:300px;">
+        <a href="#/page1/order1"class="button button-block button-assertive" >
+        
+  立即落柯打
+</a>
+        
+        
+        
+        <div class="card" ng-repeat="or in orders|orderBy:'date'">
+ 
+ <div class="item item-divider" style="font-size:13px;">
+      編號: {{or._id}} 
+  </div>
+            <div class="item item-avatar" >
+    <img src="img/spengler.jpg">
+    <p>編號: {{or._id}}</p>
+    <p>日期: {{or.date| date:'yyyy-MM-dd HH:mm:ss'}}</p>
+     <p>地方: {{or.choice}}</p>
+    <p>尺寸: {{or.size}}</p>
+    <p>房間數量: {{or.rooms}}</p>
+    <p>洗手間數量: {{or.bathrooms}}</p>
+                   
+
+  </div>
+                 <div class="item ">
+                     <p>柯打狀態： {{or.status|orderState}}</p>
+            </div>
+     <div class="item tabs tabs-secondary tabs-icon-left">
+      
+    <a ng-show="or.status==2 && or.isLike==0" ng-click="likeOrder(or._id)"  class="tab-item" href="#">
+      <i class="icon ion-thumbsup"></i>
+      喜歡我們的服務請click 贊！ 
+    </a>
+    <a ng-show="or.status==1" href="tel:+1-800-555-1234" class="tab-item" href="#">
+      <i class="icon ion-gear-a"></i>
+      聯絡我們
+    </a>
+    <a ng-show="or.status==0" ng-click="deleteOrder($index,or._id)" class="tab-item" href="#">
+      <i class="icon ion-trash-a"></i>
+      取消
+    </a>
+  </div>       
+            
+</div>
+        
+       
+        
+        
+        
+        
+        
+        
+        
+    </ion-content>
+</ion-view>
